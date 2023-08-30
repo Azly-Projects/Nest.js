@@ -1,6 +1,7 @@
 # Local development
 development/
 .env
+*.bak.*
 
 # compiled output
 /dist

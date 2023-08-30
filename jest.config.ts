@@ -10,7 +10,7 @@ const config: Config.InitialOptions = {
   moduleNameMapper: {
     '@/(.*)': '<rootDir>/$1',
   },
-  coveragePathIgnorePatterns: ['<rootDir>/main.ts'],
+  coveragePathIgnorePatterns: ['<rootDir>/main.ts', '.*\\.bak\\.(t|j)s$'],
   verbose: true,
   testRegex: '.*\\.spec\\.ts$',
   transform: {
