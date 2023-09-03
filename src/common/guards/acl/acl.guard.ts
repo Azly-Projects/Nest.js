@@ -150,9 +150,17 @@ export class ACLGuard implements CanActivate {
       }
     }
 
-    this.logger.verbose(`Activation rejected`);
+    const ACL = [
+      handlerPermissions,
+      handlerRoles,
+      classPermissions,
+      classRoles,
+    ];
 
-    return false;
+    const hasRule = ACL.some((rule) => typeof rule === 'object');
+    this.logger.verbose(`Activation ${!hasRule ? 'accepted' : 'rejected'}`);
+
+    return !hasRule;
   }
 
   /**
